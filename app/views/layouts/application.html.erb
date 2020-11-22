@@ -39,10 +39,21 @@
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
         </div>
+        <div class="navbar-item">
+        </div>
+
         <div class="navbar-end">
-          <div class="bavbar-item">
+          <div class="navbar-item">
             <div class="field is-grouped">
+              <p class="control">
+              <%= link_to "レシピグラマー一覧", users_path, class: "button is-warning is-light" %>
+              </p>
+              <p class="control">
+              <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
+              </p>
+              <p class="control">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+              </p>
             </div>
           </div>
         </div>
@@ -51,12 +62,19 @@
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
         </div>
+        <div class="navbar-item">
+          <%= link_to "レシピグラマー一覧", users_path, class: "navbar-item button is-warning is-light"%>
+        </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
-              <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
-              <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
+              <p class="control">
+                <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
+              </p>
+              <p class="control">
+                <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
+              </p>
             </div>
           </div>
         </div> 
