@@ -38,21 +38,23 @@
     <% if user_signed_in? %>
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
+          <%= link_to "一覧", dogs_path, class: "navbar-item button is-warning is-light" %>
         </div>
         <div class="navbar-item">
+          <%= link_to "新規投稿", new_dog_path, class: "navbar-item button is-warning is-light" %>
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-              <%= link_to "レシピグラマー一覧", users_path, class: "button is-warning is-light" %>
+                <%= link_to "ドッググラマー一覧", users_path, class: "button is-warning is-light" %>
               </p>
               <p class="control">
-              <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
+                <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
               </p>
               <p class="control">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
               </p>
             </div>
           </div>
@@ -61,9 +63,10 @@
     <% else %>
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-item">
+          <%= link_to "一覧", dogs_path, class: "navbar-item button is-warning is-light" %>
         </div>
         <div class="navbar-item">
-          <%= link_to "レシピグラマー一覧", users_path, class: "navbar-item button is-warning is-light"%>
+          <%= link_to "ドッググラマー一覧", users_path, class: "navbar-item button is-warning is-light"%>
         </div>
 
         <div class="navbar-end">

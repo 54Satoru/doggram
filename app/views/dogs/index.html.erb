@@ -1,0 +1,48 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        一覧
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @dogs.each do |dog| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to dog_path(dog) do %>
+                  <%= attachment_image_tag dog, :image %>
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <%= link_to user_path(dog.user.id) do %>
+                      <%= attachment_image_tag dog.user, :profile_image, fallback: "satoru.jpg", class: "profile_image" %>
+                    <% end %>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="title"><%= link_to dog.user.username, user_path(dog.user.id) %></div>
+                </div>
+              </div>
+
+              <div class="content">
+                <time><%= dog.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
