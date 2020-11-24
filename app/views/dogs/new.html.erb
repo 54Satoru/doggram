@@ -2,11 +2,22 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        新規レシピ作成
+        新規投稿
       </h1>
     </div>
   </div>
 </section>
+
+<% if @dog.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@dog.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @dog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <section class="section">
   <div class="container">
@@ -14,7 +25,7 @@
       <div class="column is-6">
         <%= form_for @dog do |f| %>
           <div class="field">
-            <%= f.label :title, "名前", class: "label" %>
+            <%= f.label :title, "タイトル", class: "label" %>
             <%= f.text_field :title, class: "input" %>
           </div>
 

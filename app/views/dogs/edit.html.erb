@@ -8,6 +8,17 @@
   </div>
 </section>
 
+<% if @dog.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@dog.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @dog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
